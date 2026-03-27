@@ -2,15 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get_thumbnail_video/index.dart';
-import 'package:get_thumbnail_video/video_thumbnail.dart';
+import 'package:get_thumbnail_video_plus/index.dart';
+import 'package:get_thumbnail_video_plus/video_thumbnail.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -120,9 +120,9 @@ Future<ThumbnailResult> genThumbnail(ThumbnailRequest r) async {
 
 class GenThumbnailImage extends StatefulWidget {
   const GenThumbnailImage({
-    Key? key,
+    super.key,
     required this.thumbnailRequest,
-  }) : super(key: key);
+  });
   final ThumbnailRequest thumbnailRequest;
 
   @override
@@ -177,7 +177,7 @@ class _GenThumbnailImageState extends State<GenThumbnailImage> {
 }
 
 class DemoHome extends StatefulWidget {
-  const DemoHome({Key? key}) : super(key: key);
+  const DemoHome({super.key});
 
   @override
   State<DemoHome> createState() => _DemoHomeState();
@@ -287,52 +287,44 @@ class _DemoHomeState extends State<DemoHome> {
             isDense: true,
             labelText: 'Thumbnail Format',
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Radio<ImageFormat>(
-                    groupValue: _format,
-                    value: ImageFormat.JPEG,
-                    onChanged: (v) => setState(() {
-                      _format = v!;
-                      _editNode.unfocus();
-                    }),
-                  ),
-                  const Text('JPEG'),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Radio<ImageFormat>(
-                    groupValue: _format,
-                    value: ImageFormat.PNG,
-                    onChanged: (v) => setState(() {
-                      _format = v!;
-                      _editNode.unfocus();
-                    }),
-                  ),
-                  const Text('PNG'),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Radio<ImageFormat>(
-                    groupValue: _format,
-                    value: ImageFormat.WEBP,
-                    onChanged: (v) => setState(() {
-                      _format = v!;
-                      _editNode.unfocus();
-                    }),
-                  ),
-                  const Text('WebP'),
-                ],
-              ),
-            ],
+          child: RadioGroup<ImageFormat>(
+            groupValue: _format,
+            onChanged: (v) => setState(() {
+              _format = v!;
+              _editNode.unfocus();
+            }),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Radio<ImageFormat>(
+                      value: ImageFormat.JPEG,
+                    ),
+                    Text('JPEG'),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Radio<ImageFormat>(
+                      value: ImageFormat.PNG,
+                    ),
+                    Text('PNG'),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Radio<ImageFormat>(
+                      value: ImageFormat.WEBP,
+                    ),
+                    Text('WebP'),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       )

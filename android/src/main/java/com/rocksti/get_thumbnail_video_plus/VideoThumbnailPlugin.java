@@ -1,4 +1,4 @@
-package com.rocksti.get_thumbnail_video;
+package com.rocksti.get_thumbnail_video_plus;
 
 import android.content.Context;
 import android.graphics.Bitmap;

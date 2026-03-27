@@ -1,6 +1,6 @@
-# get_thumbnail_video_example
+# get_thumbnail_video_plus_example
 
-Demonstrates how to use the get_thumbnail_video plugin.
+Demonstrates how to use the get_thumbnail_video_plus plugin.
 
 ## Getting Started
 

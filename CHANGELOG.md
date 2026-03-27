@@ -1,3 +1,6 @@
+## 0.7.4
+* Initial fork of HrBDev's work to add WASM support
+
 ## 0.7.3
 * Relaxed the environment constraints for the plugin to support flutter v3.22.0
 

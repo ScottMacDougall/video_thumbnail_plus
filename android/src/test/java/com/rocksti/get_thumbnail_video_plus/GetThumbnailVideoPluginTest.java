@@ -1,4 +1,4 @@
-package com.rocksti.get_thumbnail_video;
+package com.rocksti.get_thumbnail_video_plus;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;

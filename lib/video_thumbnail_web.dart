@@ -5,8 +5,8 @@ import 'dart:math' as math;
 import 'package:cross_file/cross_file.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:get_thumbnail_video/src/image_format.dart';
-import 'package:get_thumbnail_video/src/video_thumbnail_platform.dart';
+import 'package:get_thumbnail_video_plus/src/image_format.dart';
+import 'package:get_thumbnail_video_plus/src/video_thumbnail_platform.dart';
 import 'package:web/web.dart';
 
 // An error code value to error name Map.
@@ -150,6 +150,7 @@ class VideoThumbnailWeb extends VideoThumbnailPlatform {
           void callback(Blob? blob) {
             completer.complete(blob);
           }
+
           canvas.toBlob(
             callback.toJS,
             _imageFormatToCanvasFormat(imageFormat),
