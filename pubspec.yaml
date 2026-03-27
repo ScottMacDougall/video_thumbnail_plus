@@ -6,7 +6,7 @@ repository: https://github.com/ScottMacDougall/video_thumbnail_plus
 
 environment:
   sdk: ^3.4.0
-  flutter: ^3.22.0
+  flutter: ">=3.22.0"
 
 dependencies:
   flutter:
